@@ -1,13 +1,16 @@
-const fs = require('fs'); // To interact with the JSON file from where we want to fetch the data
 const dotenv = require('dotenv'); // To manage environment variables
 const mongoose = require('mongoose');
 
-dotenv.config({ path: './../config.env' }); // Load environment variables
+dotenv.config({ path: './config.env' }); // Load environment variables
 
-const Task = require(`./../models/taskModels.js`);
+const Task = require(`./../models/taskModel`);
+
+const DB = process.env.DATABASE_LOCAL; // Get the database URL from environment variables
+
+
+// READ JSON FILE
+
 const tasks = require('./tasks.json'); // Load tasks from JSON file
-
-const db = process.env.DATABASE_LOCAL; // Get the database URL from environment variables
 
 const loadTasks = async () => {
     try {
@@ -18,6 +21,9 @@ const loadTasks = async () => {
     }
 };
 
+
+//DELETE ALL THE DATA FROM DB
+
 const deleteTasks = async () => {
     try {
         await Task.deleteMany(); // Delete all tasks
@@ -27,9 +33,10 @@ const deleteTasks = async () => {
     }
 };
 
+
 (async () => {
     try {
-        await mongoose.connect(db, {
+        await mongoose.connect(DB, {
             useNewUrlParser: true,
             useCreateIndex: true,
             useFindAndModify: false,
@@ -45,8 +52,8 @@ const deleteTasks = async () => {
         } else {
             console.log("Please specify '--import' or '--delete'");
         }
-
         await mongoose.disconnect();
+        
     } catch (err) {
         console.error('Error connecting to DB:', err); // Log the error
     }
