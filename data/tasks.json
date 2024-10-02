@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Complete Node.js Project",
+        "dueDate": "2024-10-10T12:00:00Z",
+        "completed": false,
+        "description": "Finish the task manager application with all required features."
+    },
+    {
+        "name": "Review JavaScript concepts",
+        "dueDate": "2024-10-05T12:00:00Z",
+        "completed": false,
+        "description": "Go through ES6, JSON, and other JavaScript concepts."
+    },
+    {
+        "name": "Prepare for the coding interview",
+        "dueDate": "2024-10-15T12:00:00Z",
+        "completed": false,
+        "description": "Practice coding challenges and review common algorithms."
+    },
+    {
+        "name": "Attend the workshop on MongoDB",
+        "dueDate": "2024-10-20T12:00:00Z",
+        "completed": false,
+        "description": "Learn best practices for using MongoDB in applications."
+    },
+    {
+        "name": "Write a blog post about Node.js",
+        "dueDate": "2024-10-25T12:00:00Z",
+        "completed": false,
+        "description": "Share insights and experiences from working with Node.js."
+    }
+]
